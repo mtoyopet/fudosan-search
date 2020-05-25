@@ -19,4 +19,5 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+### ESLint
+https://qiita.com/takakobem/items/f7817992926fb8207b4f

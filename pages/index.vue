@@ -6,7 +6,7 @@
         v-for="(item, i) in type"
         :key="i"
         :value="item"
-        to="/select_prefecture"
+        to="/prefectures"
         class="ml-3 mt-2"
         outlined
         color="primary"

@@ -13,5 +13,9 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'nuxt/no-cjs-in-config': 'off',
+    "comma-dangle": 0,
+    "no-console": 0,
+    "quotes": [0, "backtick", "single", "backtick"]
   }
 }
