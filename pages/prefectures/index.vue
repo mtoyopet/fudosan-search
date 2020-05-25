@@ -5,6 +5,7 @@
       <v-btn
         v-for="pref in prefectures"
         :key="pref.code"
+        to="/prefectures/13"
         class="ml-3 mt-2"
         outlined
         color="primary"
