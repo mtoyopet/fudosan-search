@@ -1,27 +1,29 @@
 <template>
   <div>
-    <h3>種別を選択してください</h3>
+    <h3>都道府県を選択してください</h3>
     <v-row justify="start">
       <v-btn
-        v-for="(item, i) in type"
-        :key="i"
-        :value="item"
+        v-for="item in prefectures"
+        :key="item.code"
+        :value="item.name"
         to="/select_prefecture"
         class="ml-3 mt-2"
         outlined
         color="primary"
       >
-        {{ item }}
+        {{ item.name }}
       </v-btn>
     </v-row>
   </div>
 </template>
 
 <script>
+import { prefectures } from '~/assets/prefectures.js'
+
 export default {
   data () {
     return {
-      type: ['マンション', 'アパート', '一戸建て'],
+      prefectures,
       url: ''
     }
   },

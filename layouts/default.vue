@@ -56,19 +56,19 @@ export default {
   data () {
     return {
       items: [
-        { icon: 'mdi-home', text: 'ホーム', href: '/' },
-        { divider: true },
-        { heading: 'ごみっとくん' },
-        {
-          icon: 'mdi-weather-sunny',
-          text: 'ごみグループ',
-          href: '/blocks/select_prefecture'
-        },
-        {
-          icon: 'mdi-weather-sunny',
-          text: 'ごみ捨て曜日',
-          href: '/disposal_days/select_prefecture'
-        }
+        { icon: 'mdi-home', text: 'ホーム', href: '/' }
+        // { divider: true },
+        // { heading: 'ごみっとくん' },
+        // {
+        //   icon: 'mdi-weather-sunny',
+        //   text: 'ごみグループ',
+        //   href: '/blocks/select_prefecture'
+        // },
+        // {
+        //   icon: 'mdi-weather-sunny',
+        //   text: 'ごみ捨て曜日',
+        //   href: '/disposal_days/select_prefecture'
+        // }
       ],
       drawer: false,
       ready: false
