@@ -4,8 +4,7 @@
     <v-btn 
       to="/prefectures"
       outlined
-      color="warning"
-      class="mb-5 mr-2"
+      color="orange"
     >
       都道府県選択へ戻る
     </v-btn>
@@ -17,28 +16,26 @@
         <v-tab-item>
           <v-card flat>
             <v-card-text>
-              <p>{{ filtered_stations.length || 0 }} 駅を選択中</p>
-              <v-divider />
-              路線選択 - {{ prefectures[$route.params.id - 1].name }}
+              <p class="subtitle-1">{{ filtered_stations.length || 0 }} 駅を選択中</p>
+              <v-divider class="my-3" />
+              <p class="subtitle-2">路線選択 - {{ prefectures[12].name }}</p>
               <v-row>
-                <v-switch
-                  v-for="dat in data"
-                  :key="dat.line_cd"
-                  height="5"
-                  class="ma-1"
-                  :label="dat.line_name"
-                  @change="hello(dat.line_cd)"
-                />
+                <v-col cols="12" sm="2" class="pt-0" v-for="dat in data" :key="dat.line_cd">
+                  <v-checkbox
+                    height="5"
+                    :label="dat.line_name"
+                    @change="hello(dat.line_cd)"
+                  />
+                </v-col>
               </v-row>
-              <v-divider />
+              <v-divider class="my-3"/>
               <v-row>
-                <v-switch
-                  v-for="dat in filtered_stations"
-                  :key="dat.station_cd"
-                  height="5"
-                  class="ma-1"
-                  :label="dat.station_name"
-                />
+                <v-col cols="12" sm="2" class="pt-0" v-for="dat in filtered_stations" :key="dat.station_cd">
+                  <v-checkbox
+                    height="5"
+                    :label="dat.station_name"
+                  />
+                </v-col>
               </v-row>
               <v-btn
                 to="/conditions/"
@@ -54,19 +51,21 @@
         <v-tab-item>
           <v-card flat>
             <v-card-text>
-              市区町村(東京都)
               <v-row>
-                <v-col
-                  cols="12"
-                  sm="3"
-                  v-for="(city, index) in cities"
-                  :key="index"
-                >
-                  <v-checkbox
-                    height="5"
-                    class="ma-1"
-                    :label="city"
-                  />
+                <v-col cols="12" sm="12" class="pt-0" v-for="(district, index) in tokyo" :key="index">
+                  <p class="subtitle-1 mb-0 font-weight-bold">{{ district.area }}
+                  </p>
+                  
+                  <v-divider class="my-3" />
+                  <v-row>
+                    <v-col cols="12" sm="2" class="pt-0" v-for="city in district.cities" :key="city.name">
+                      <v-checkbox
+                        height="5"
+                        :label="`${city.name} (${city.quantity})`"
+                        :disabled="city.quantity === 0 ? true : false"
+                      />
+                    </v-col>
+                  </v-row>
                 </v-col>
               </v-row>
               <v-divider />
@@ -92,6 +91,8 @@ import breadcrumbs from "~/components/breadcrumbs.vue"
 import { routes } from '~/assets/routes.js'
 import { prefectures } from '~/assets/prefectures.js'
 import { stations } from '~/assets/stations.js'
+import { tokyo } from '~/assets/tokyo.js'
+
 export default {
   components: {
     "custom-breadcrumbs": breadcrumbs
@@ -102,11 +103,11 @@ export default {
       checkbox: [],
       prefectures,
       stations,
-      tabItems: ["駅から検索", "市町村名から検索"],
-      cities: ["千代田区", "中央区", "港区", "新宿区", "文京区", "渋谷区", "台東区", "墨田区", "江東区", "荒川区", "足立区", "葛飾区"],
+      tokyo,
+      tabItems: ["駅から検索", "市区から検索"],
       data: routes.filter(_ => _.lat > 35.3 && _.lat < 35.7 && _.lon > 139.4 && _.lon < 139.8).slice(0, 10),
       selectId: 13,
-            breadcrumbs: [
+      breadcrumbs: [
         {
           text: "ホーム",
           disabled: false,

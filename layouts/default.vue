@@ -12,7 +12,7 @@
       </nuxt-link>
       <v-spacer />
         <v-btn outlined to="/favorites/" class="white--text">
-          あとで問い合わせ一覧
+          <v-icon left>mdi-heart</v-icon>お気に入り
         </v-btn>
     </v-app-bar>
 
