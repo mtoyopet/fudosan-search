@@ -36,11 +36,8 @@
             <span class="font-weight-bold">専有面積/間取り</span>　42.04m² / 1LDK
           </v-card-subtitle>
           <v-card-actions>
-            <v-btn
-              text
-              color="red"
-            >
-              あとでお問い合わせ
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
             </v-btn>
             <v-spacer />
             <v-btn
