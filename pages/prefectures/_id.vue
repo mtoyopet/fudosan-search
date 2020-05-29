@@ -1,13 +1,6 @@
 <template>
   <v-container fluid>
     <custom-breadcrumbs justify-start :breadcrumbs="breadcrumbs" />
-    <v-btn 
-      to="/prefectures"
-      outlined
-      color="orange"
-    >
-      都道府県選択へ戻る
-    </v-btn>
     <v-card>
       <v-tabs class="mt-3" dark background-color="blue darken-3">
         <v-tab v-for="tabName in tabItems" :key="tabName">
