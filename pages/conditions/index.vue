@@ -9,15 +9,17 @@
             </v-system-bar>
             <v-card-text>
               <v-row align="center">
-                <v-col class="pt-0" cols="12" sm="4">
+                <v-col class="pt-0" cols="6" md="4" sm="2">
                   <v-select
                     :items="rent"
                     label="下限なし"
                     dense
                   ></v-select>
                 </v-col>
-                ~ 
-                <v-col class="pt-0" cols="12" sm="4">
+                <v-col class="pt-0" cols="1" md="1" sm="1">
+                  <p>~</p> 
+                </v-col>
+                <v-col class="pt-0" cols="6" md="4" sm="2">
                   <v-select
                     :items="rent"
                     label="上限なし"
@@ -25,18 +27,18 @@
                   ></v-select>
                 </v-col>
               </v-row>
-              <v-row align="center">
-                <v-col class="mt-0 py-0" cols="12" sm="4">
+              <v-row>
+                <v-col class="mt-0 py-0" cols="6" md="4" sm="6">
                   <v-checkbox
                     label="礼金なし"
                   ></v-checkbox>
                 </v-col>
-                <v-col class="mt-0 py-0" cols="12" sm="4">
+                <v-col class="mt-0 py-0" cols="6" md="4" sm="6">
                   <v-checkbox
                     label="敷金なし"
                   ></v-checkbox>
                 </v-col>
-                <v-col class="mt-0 py-0" cols="12" sm="4">
+                <v-col class="mt-0 py-0" cols="6" md="4" sm="6">
                   <v-checkbox
                     label="共益費/管理費を含む"
                   ></v-checkbox>
@@ -53,7 +55,7 @@
             </v-system-bar>
             <v-card-text>
               <v-row>
-                <v-col class="mt-0 py-0" cols="12" sm="4" v-for="item in madori" :key="item">
+                <v-col class="mt-0 py-0" cols="6" md="4" sm="6" v-for="item in madori" :key="item">
                   <v-checkbox
                     class="my-1"
                     :label="item"
@@ -101,7 +103,7 @@
             </v-system-bar>
             <v-card-text>
               <v-row>
-                <v-col class="mt-0 py-0" cols="12" sm="4" v-for="item in buildingType" :key="item">
+                <v-col class="mt-0 py-0" cols="6" md="4" sm="6" v-for="item in buildingType" :key="item">
                   <v-checkbox
                     class="my-1"
                     :label="item"
@@ -119,7 +121,7 @@
             </v-system-bar>
             <v-card-text>
               <v-row>
-                <v-col class="mt-0 py-0" cols="12" sm="4" v-for="item in kodawari" :key="item">
+                <v-col class="mt-0 py-0" cols="6" md="4" sm="6" v-for="item in kodawari" :key="item">
                   <v-checkbox
                     class="my-1"
                     :label="item"
