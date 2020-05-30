@@ -25,7 +25,7 @@
             reverse-transition="fade-transition"
             transition="fade-transition"
           >
-            <v-btn color="error" dark large class="ma-3" @click="showContactForm">今すぐお問い合わせ</v-btn>
+            <v-btn color="error" dark small class="ma-2" @click="showContactForm">今すぐお問い合わせ</v-btn>
           </v-carousel-item>
         </v-carousel>
         <v-card-text>
