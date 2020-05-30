@@ -6,7 +6,18 @@
         <v-card
           class="mx-auto"
         >
-        <v-carousel>
+        <v-carousel class="hidden-sm-and-down" height="430">
+          <v-carousel-item
+            v-for="(image,i) in images"
+            :key="i"
+            :src="image.src"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          >
+            <v-btn color="error" dark large class="ma-3" @click="showContactForm">今すぐお問い合わせ</v-btn>
+          </v-carousel-item>
+        </v-carousel>
+        <v-carousel class="hidden-md-and-up" height="230">
           <v-carousel-item
             v-for="(image,i) in images"
             :key="i"

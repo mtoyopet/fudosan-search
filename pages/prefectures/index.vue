@@ -12,7 +12,7 @@
             </v-col>
           </v-row>
           <v-row justify="start">
-            <v-col cols="12" md="1" sm="6" class="mt-0 pt-0" v-for="site in prefecture.sites" :key="site.code">
+            <v-col cols="6" md="1" sm="6" class="mt-0 pt-0" v-for="site in prefecture.sites" :key="site.code">
               <v-btn
                 to="/prefectures/1"
                 text 

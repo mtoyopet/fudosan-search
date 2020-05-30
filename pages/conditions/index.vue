@@ -9,20 +9,20 @@
             </v-system-bar>
             <v-card-text>
               <v-row align="center">
-                <v-col class="pt-0" cols="6" md="4" sm="2">
+                <v-col class="pt-0 pr-0" cols="4" md="4" sm="2">
                   <v-select
                     :items="rent"
-                    label="下限なし"
+                    label="下限"
                     dense
                   ></v-select>
                 </v-col>
-                <v-col class="pt-0" cols="1" md="1" sm="1">
-                  <p>~</p> 
+                <v-col class="pt-0 d-flex justify-center" cols="1" md="1" sm="1">
+                  <p class="title">~</p> 
                 </v-col>
-                <v-col class="pt-0" cols="6" md="4" sm="2">
+                <v-col class="pt-0 pl-0" cols="4" md="4" sm="2">
                   <v-select
                     :items="rent"
-                    label="上限なし"
+                    label="上限"
                     dense
                   ></v-select>
                 </v-col>
@@ -72,7 +72,7 @@
               <span class="ma-1">駅徒歩分</span>
             </v-system-bar>
             <v-card-text>
-              <v-col class="mt-0 pt-0" cols="12" sm="12">
+              <v-col class="mt-0 pt-0" cols="12" sm="6" md="12">
                 <v-radio-group v-model="distance" :mandatory="false" row>
                   <v-radio class="mb-2" v-for="item in toho" :key="item" :label="item" :value="item" />
               </v-radio-group>
@@ -152,7 +152,7 @@ export default {
   },
   data () {
     return {
-      rent: ['3.0万円','3.5万円','4.0万円','4.5万円','5.0万円','5.5万円','6.0万円','6.5万円','7.0万円','7.5万円','8.0万円'],
+      rent: ['指定なし', '3.0万円','3.5万円','4.0万円','4.5万円','5.0万円','5.5万円','6.0万円','6.5万円','7.0万円','7.5万円','8.0万円'],
       madori: ['ワンルーム', '1K', '1DK', '1LDK', '2K', '2DK', '2LDK', '3K', '3DK', '3LDK', '3LDK以上'],
       toho: ["指定なし", "1分以内", "5分以内", "7分以内","10分以内", "15分以内", "20分以内"],
       chikunen: ["指定なし", "新築", "1年以内", "3年以内", "5年以内", "10年以内", "15年以内", "20年以内", "25年以内", "30年以内"],
